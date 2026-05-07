@@ -3,13 +3,13 @@ const phases = [
   {
     number: 1,
     title: 'Foundation & layout shell',
-    status: 'In progress',
+    status: 'Completed',
     summary: 'Tailwind config, fonts, and the base app shell with routing.',
   },
   {
     number: 2,
     title: 'Data model & store',
-    status: 'Queued',
+    status: 'In progress',
     summary: 'Mock campaign data and Pinia store scaffolding.',
   },
   {
@@ -68,27 +68,24 @@ const phases = [
   },
 ]
 
-const phaseOneDeliverables = [
+const phaseTwoDeliverables = [
   {
-    title: 'Tailwind design system tokens',
-    description: 'Added brand and surface colors plus Sora/JetBrains fonts.',
+    title: 'Campaign mock data',
+    description: 'Curated 12 campaigns with varied statuses, budgets, and channels.',
   },
   {
-    title: 'Global styling foundation',
-    description: 'Tailwind base layers, fade transition, and dark theme defaults.',
+    title: 'Pinia campaign store',
+    description: 'Search, filter, and stats computed state ready for UI binding.',
   },
   {
-    title: 'App shell scaffold',
-    description: 'Sidebar, header, and routing shell for upcoming views.',
-  },
-  {
-    title: 'Phase roadmap view',
-    description: 'Outlined the 11-phase plan with status indicators.',
+    title: 'Data layer handoff',
+    description: 'Prepared the data foundation for upcoming stat cards and charts.',
   },
 ]
 
 const statusClasses = {
   'In progress': 'border-brand-500/40 bg-brand-600/20 text-brand-100',
+  Completed: 'border-emerald-500/40 bg-emerald-500/20 text-emerald-300',
   Queued: 'border-surface-border bg-white/5 text-slate-300',
 }
 
@@ -125,7 +122,7 @@ const statusClassFor = (status) => statusClasses[status] ?? statusClasses.Queued
       <div class="rounded-2xl border border-surface-border bg-surface-card p-6">
         <div class="flex items-center justify-between">
           <h3 class="text-lg font-semibold text-slate-100">Phase timeline</h3>
-          <p class="text-xs text-slate-400">Phase 1 is active</p>
+          <p class="text-xs text-slate-400">Phase 2 is active</p>
         </div>
         <ol class="mt-4 space-y-4">
           <li
@@ -150,12 +147,12 @@ const statusClassFor = (status) => statusClasses[status] ?? statusClasses.Queued
       </div>
 
       <div class="rounded-2xl border border-surface-border bg-surface-card p-6">
-        <h3 class="text-lg font-semibold text-slate-100">Phase 1 deliverables</h3>
+        <h3 class="text-lg font-semibold text-slate-100">Phase 2 deliverables</h3>
         <p class="mt-2 text-sm text-slate-400">
-          Foundation tasks completed in this phase to enable the rest of the build.
+          Data-model setup in progress to support dashboards, filters, and analytics.
         </p>
         <ul class="mt-4 space-y-4">
-          <li v-for="item in phaseOneDeliverables" :key="item.title" class="flex gap-3">
+          <li v-for="item in phaseTwoDeliverables" :key="item.title" class="flex gap-3">
             <span class="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500"></span>
             <div>
               <p class="text-sm font-semibold text-slate-100">{{ item.title }}</p>
