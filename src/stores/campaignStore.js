@@ -4,6 +4,7 @@ import { campaigns as mockData } from '../data/campaigns'
 
 export const useCampaignStore = defineStore('campaign', () => {
   const campaigns = ref([...mockData])
+  const nextId = ref(Math.max(0, ...mockData.map((campaign) => campaign.id)) + 1)
   const searchQuery = ref('')
   const statusFilter = ref('All')
   const typeFilter = ref('All')
@@ -31,12 +32,13 @@ export const useCampaignStore = defineStore('campaign', () => {
   const addCampaign = (campaign) => {
     campaigns.value.unshift({
       ...campaign,
-      id: Date.now(),
+      id: nextId.value,
       spent: 0,
       reach: 0,
       conversions: 0,
       conversionRate: 0,
     })
+    nextId.value += 1
   }
 
   const deleteCampaign = (id) => {
