@@ -5,14 +5,14 @@ import { Bell, Search } from 'lucide-vue-next'
 
 const route = useRoute()
 
-const pageTitle = computed(() => route.meta?.title ?? 'Dashboard')
+const currentPageTitle = computed(() => route.meta?.title ?? 'Dashboard')
 </script>
 
 <template>
   <header class="flex items-center justify-between border-b border-surface-border bg-surface px-6 py-5">
     <div>
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">CampaignPulse</p>
-      <h1 class="text-2xl font-semibold text-slate-100">{{ pageTitle }}</h1>
+      <h1 class="text-2xl font-semibold text-slate-100">{{ currentPageTitle }}</h1>
     </div>
     <div class="flex items-center gap-3">
       <button
