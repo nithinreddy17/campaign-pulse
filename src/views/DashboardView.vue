@@ -83,7 +83,7 @@ const phaseOneDeliverables = [
   },
   {
     title: 'Phase roadmap view',
-    description: 'Outlined the 10+ phase plan with status indicators.',
+    description: 'Outlined the 11-phase plan with status indicators.',
   },
 ]
 
